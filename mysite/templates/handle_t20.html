@@ -1,0 +1,161 @@
+{% load myfun %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>T20_handle</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <style>
+        .text{
+            height:300px;
+        }
+        .myform{
+            margin-left: 100px;
+            margin-right: 200px;
+            width: 900px;
+        }
+        .t20s{
+            margin-left: 30px;
+        }
+        .hide{
+            display:none;
+        }
+        .ta{
+            background-color:lightgoldenrodyellow;
+        }
+        .ret{
+            background-color:lightblue;
+        }
+{#        #navi li a{#}
+{#            height:50px;#}
+{#        }#}
+        #navi-div {
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div style="height: 30px">
+
+    </div>
+    <div id="navi-div" >
+        <ul class="nav nav-pills nav-justified" id="navi">
+              <li role="presentation" ><a href="/">发送签名T20</a></li>
+              <li role="presentation"><a href="/analy/">分析T20</a></li>
+{#              <li role="presentation"><a href="#">Messages</a></li>#}
+        </ul>
+    </div>
+    <div >
+            <div style="margin-left:200px;">
+                <form name="t20form" class="myform" action="/" method="post">{% csrf_token %}
+                    <textarea class="text form-control" style="height:150px;" name="t20"></textarea>
+                    <br/>
+                    {% if error %}
+                    <p style="color:red">{{ error }}</p>
+                    {% endif %}
+{#                    <input class="pull-right" type="button" value="发送T20" />#}
+{#                    <input class="pull-right" type="button" value="签名T20"/>#}
+{#                    <input class="pull-right" type="submit" value="提交"/>#}
+                    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                      <div class="btn-group" role="group">
+                        <button name="send_t20" type="button" class="btn btn-default" onclick="Send(this)">发送T20</button>
+                      </div>
+                      <div class="btn-group" role="group">
+                        <button name="sig_t20" type="button" class="btn btn-default" onclick="Send(this)">签名T20</button>
+                      </div>
+{#                      <div class="btn-group" role="group">#}
+{#                        <button type="button" class="btn btn-default">Right</button>#}
+{#                      </div>#}
+                    </div>
+                </form>
+            </div>
+
+    </div>
+    <script src="/static/js/jquery-2.2.2.js"></script>
+    <script src="/static/js/bootstrap.js"></script>
+    <script >
+        $(document).ready(function(){
+            $("#navi-div a[href='{{ request.path }}']").parent().addClass("active")
+        })
+                //csrf ref
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie != '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = jQuery.trim(cookies[i]);
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        var csrftoken = getCookie('csrftoken');
+        function csrfSafeMethod(method) {
+            // these HTTP methods do not require CSRF protection
+            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+        }
+        $.ajaxSetup({
+            beforeSend: function(xhr, settings) {
+                if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                }
+            }
+        });
+        //end csrf ref
+        $(document).ready(function(){
+            $("table").children().children(":first-child").click(function () {
+                $(this).siblings().toggleClass("hide")
+
+            })
+        $(document).ready(function(){
+
+        $("body").delegate("textarea", "keydown",function(e){
+            if(e.which == 13) {//Enter key down
+                //send msg button clicked
+                var msg_text = $("textarea").val();
+                if ($.trim(msg_text).length > 0){
+{#                    SendMsg(msg_text);#}
+                    $("form").submit();
+                }
+                //no wait the send_msg's call confirm msg
+                $("textarea").val('');
+            }
+        });//end body
+});//end doc ready
+
+
+        })
+        function Send(arg) {
+{#            $(arg).attr("name")#}
+            var msg_text = $("textarea").val();
+{#            var action=$(arg).attr("name");#}
+            console.log(msg_text);
+            $.ajax({
+                url: "/",
+                method: "POST",
+                data: {msg: msg_text, act: $(arg).attr("name")},
+                success: function(arg1){
+                    var callback_dict = $.parseJSON(arg1);
+                    var back=callback_dict["back"];
+
+                    back="<p>"+back+"</p>"
+                    console.log(back)
+                    $(".myform").after(back);
+                }//end function
+            });
+
+        };
+
+    </script>
+
+
+</body>
+</html>

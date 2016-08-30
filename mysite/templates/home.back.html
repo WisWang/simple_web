@@ -1,0 +1,117 @@
+{% load myfun %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>T20</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <style>
+        .text{
+            height:300px;
+        }
+        .myform{
+            margin-left: 100px;
+            margin-right: 200px;
+            width: 900px;
+        }
+        .t20s{
+            margin-left: 30px;
+        }
+        .hide{
+            display:none;
+        }
+        .ta{
+            background-color:lightgoldenrodyellow;
+        }
+        .ret{
+            background-color:lightblue;
+        }
+         #navi-div {
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div style="height: 30px">
+
+    </div>
+    <div id="navi-div" >
+        <ul class="nav nav-pills nav-justified" id="navi">
+              <li role="presentation" ><a href="/">发送签名T20</a></li>
+              <li role="presentation"><a href="/analy/">分析T20</a></li>
+{#              <li role="presentation"><a href="#">Messages</a></li>#}
+        </ul>
+    </div>
+    <div >
+            <div style="margin-left:200px;">
+                <form name="t20form" class="myform" action="/analy/" method="post">{% csrf_token %}
+                    <textarea class="text form-control" style="height:150px;" name="t20"></textarea>
+                    <br/>
+                    {% if error %}
+                    <p style="color:red">{{ error }}</p>
+                    {% endif %}
+                    <input class="pull-right" type="submit" value="提交"/>
+                </form>
+            </div>
+    {% if result %}
+        <div class="t20s table-responsive" >
+            {% for inst in result %}
+                {% autoescape off %}
+                {%  response_head inst  %}
+                {% endautoescape %}
+                <table class="table table-condensed table-condensed table-hover ">
+                    <tbody>
+                    {% for item in inst %}
+
+                        <tr>
+                            {% for it in item %}
+                                <td>{{ it }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% endfor %}
+        <div>
+    {% endif %}
+
+    </div>
+    <script src="/static/js/jquery-2.2.2.js"></script>
+    <script src="/static/js/bootstrap.js"></script>
+    <script >
+        $(document).ready(function(){
+            $("#navi-div a[href='{{ request.path }}']").parent().addClass("active")
+            })
+        $(document).ready(function(){
+            $("table").children().children(":first-child").click(function () {
+                $(this).siblings().toggleClass("hide")
+
+            })
+        $(document).ready(function(){
+
+        $("body").delegate("textarea", "keydown",function(e){
+            if(e.which == 13) {//Enter key down
+                //send msg button clicked
+                var msg_text = $("textarea").val();
+                if ($.trim(msg_text).length > 0){
+{#                    SendMsg(msg_text);#}
+                    $("form").submit();
+                }
+                //no wait the send_msg's call confirm msg
+                $("textarea").val('');
+            }
+        });//end body
+});//end doc ready
+
+
+        })
+
+    </script>
+
+
+</body>
+</html>
