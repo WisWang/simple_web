@@ -45,13 +45,17 @@
     <div id="navi-div" >
         <ul class="nav nav-pills nav-justified" id="navi">
               <li role="presentation" ><a href="/">发送签名T20</a></li>
+              <li role="presentation" ><a href="/checkbit/">卡号加校验位</a></li>
               <li role="presentation"><a href="/analy/">分析T20</a></li>
 {#              <li role="presentation"><a href="#">Messages</a></li>#}
         </ul>
     </div>
     <div >
             <div style="margin-left:200px;">
-                <form name="t20form" class="myform" action="/" method="post">{% csrf_token %}
+
+                <form name="t20form" class="myform" action="/" method="post">
+
+                    {% csrf_token %}
                     <textarea class="text form-control" style="height:150px;" name="t20"></textarea>
                     <br/>
                     {% if error %}

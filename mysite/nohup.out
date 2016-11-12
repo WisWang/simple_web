@@ -1,0 +1,210 @@
+...brutally killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /wis/django/mysite
+closing all non-uwsgi socket fds > 2 (max_fd = 65536)...
+found fd 3 mapped to socket 0 (:8000)
+running /usr/local/python27/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.13.1 (64bit) on [Thu Nov  3 09:36:08 2016] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-17) on 27 July 2016 04:49:01
+os: Linux-2.6.32-358.el6.x86_64 #1 SMP Tue Jan 29 11:47:41 EST 2013
+nodename: EMMGTEST2
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 24
+current working directory: /wis/django/mysite
+detected binary path: /usr/local/python27/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /wis/django/mysite
+your processes number limit is 16384
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address :8000 fd 3
+Python version: 2.7.12 (default, Jul 27 2016, 04:39:51)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-17)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1f2abb0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 363840 bytes (355 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1f2abb0 pid: 29774 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 29774)
+spawned uWSGI worker 1 (pid: 17886, cores: 1)
+spawned uWSGI worker 2 (pid: 17887, cores: 1)
+spawned uWSGI worker 3 (pid: 17888, cores: 1)
+spawned uWSGI worker 4 (pid: 17889, cores: 1)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /wis/django/mysite
+closing all non-uwsgi socket fds > 2 (max_fd = 65536)...
+found fd 3 mapped to socket 0 (:8000)
+running /usr/local/python27/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.13.1 (64bit) on [Thu Nov  3 09:36:18 2016] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-17) on 27 July 2016 04:49:01
+os: Linux-2.6.32-358.el6.x86_64 #1 SMP Tue Jan 29 11:47:41 EST 2013
+nodename: EMMGTEST2
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 24
+current working directory: /wis/django/mysite
+detected binary path: /usr/local/python27/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /wis/django/mysite
+your processes number limit is 16384
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address :8000 fd 3
+Python version: 2.7.12 (default, Jul 27 2016, 04:39:51)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-17)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1516bb0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 363840 bytes (355 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1516bb0 pid: 29774 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 29774)
+spawned uWSGI worker 1 (pid: 17894, cores: 1)
+spawned uWSGI worker 2 (pid: 17895, cores: 1)
+spawned uWSGI worker 3 (pid: 17896, cores: 1)
+spawned uWSGI worker 4 (pid: 17897, cores: 1)
+Thu Nov  3 09:36:52 2016 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Thu Nov  3 09:36:52 2016 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Thu Nov  3 09:36:52 2016 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Thu Nov  3 09:36:52 2016 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.13.1 (64bit) on [Thu Nov  3 10:06:05 2016] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-17) on 27 July 2016 04:49:01
+os: Linux-2.6.32-358.el6.x86_64 #1 SMP Tue Jan 29 11:47:41 EST 2013
+nodename: EMMGTEST2
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 24
+current working directory: /wis/django/mysite
+detected binary path: /usr/local/python27/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /wis/django/mysite
+your processes number limit is 16384
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8000 fd 3
+Python version: 2.7.12 (default, Jul 27 2016, 04:39:51)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-17)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x18a6c40
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 363840 bytes (355 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x18a6c40 pid: 17982 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 17982)
+spawned uWSGI worker 1 (pid: 17985, cores: 1)
+spawned uWSGI worker 2 (pid: 17986, cores: 1)
+spawned uWSGI worker 3 (pid: 17987, cores: 1)
+spawned uWSGI worker 4 (pid: 17988, cores: 1)
+[pid: 17988|app: 0|req: 1/1] 10.146.90.85 () {42 vars in 724 bytes} [Thu Nov  3 10:06:24 2016] GET / => generated 4901 bytes in 29 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 17987|app: 0|req: 1/2] 10.146.90.85 () {44 vars in 773 bytes} [Thu Nov  3 10:06:26 2016] GET /checkbit/ => generated 3905 bytes in 31 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+Internal Server Error: /checkbit/
+Traceback (most recent call last):
+  File "/usr/local/python27/lib/python2.7/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/python27/lib/python2.7/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./t20/views.py", line 112, in checkbit
+    check_b=func_checkbit.checkbit(i)
+  File "./t20/func_checkbit.py", line 9, in checkbit
+    d=c*int(b)
+ValueError: invalid literal for int() with base 10: '.'
+[pid: 17988|app: 0|req: 2/3] 10.146.90.85 () {52 vars in 953 bytes} [Thu Nov  3 10:06:33 2016] POST /checkbit/ => generated 62103 bytes in 81 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+[pid: 17987|app: 0|req: 2/4] 10.146.90.85 () {52 vars in 953 bytes} [Thu Nov  3 10:06:47 2016] POST /checkbit/ => generated 4724 bytes in 5 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 17987|app: 0|req: 3/5] 10.146.90.85 () {44 vars in 764 bytes} [Thu Nov  3 10:13:18 2016] GET / => generated 4901 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 17985|app: 0|req: 1/6] 10.146.90.85 () {44 vars in 773 bytes} [Thu Nov  3 10:13:18 2016] GET /checkbit/ => generated 3905 bytes in 36 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 17985|app: 0|req: 2/7] 10.146.90.85 () {44 vars in 764 bytes} [Thu Nov  3 10:13:19 2016] GET / => generated 4901 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 17986|app: 0|req: 1/8] 10.146.90.85 () {44 vars in 773 bytes} [Thu Nov  3 10:13:19 2016] GET /checkbit/ => generated 3905 bytes in 29 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 17986|app: 0|req: 2/9] 10.146.90.85 () {44 vars in 764 bytes} [Thu Nov  3 10:13:19 2016] GET / => generated 4901 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 17985|app: 0|req: 3/10] 10.146.90.85 () {44 vars in 773 bytes} [Thu Nov  3 10:13:20 2016] GET /checkbit/ => generated 3905 bytes in 4 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 17988|app: 0|req: 3/11] 10.146.90.85 () {44 vars in 764 bytes} [Thu Nov  3 10:13:20 2016] GET / => generated 4901 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 17987|app: 0|req: 4/12] 10.146.90.85 () {44 vars in 773 bytes} [Thu Nov  3 10:13:20 2016] GET /checkbit/ => generated 3905 bytes in 5 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 17988|app: 0|req: 4/13] 10.146.90.85 () {44 vars in 776 bytes} [Thu Nov  3 10:13:21 2016] GET /analy/ => generated 2595 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 17986|app: 0|req: 3/14] 10.146.90.85 () {44 vars in 779 bytes} [Thu Nov  3 10:13:22 2016] GET /checkbit/ => generated 3905 bytes in 4 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 17987|app: 0|req: 5/15] 10.146.90.85 () {44 vars in 764 bytes} [Thu Nov  3 10:13:22 2016] GET / => generated 4901 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 17985|app: 0|req: 4/16] 10.146.90.85 () {44 vars in 773 bytes} [Thu Nov  3 10:13:23 2016] GET /checkbit/ => generated 3905 bytes in 4 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 17986|app: 0|req: 4/17] 10.146.90.85 () {44 vars in 776 bytes} [Thu Nov  3 10:13:23 2016] GET /analy/ => generated 2595 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 17988|app: 0|req: 5/18] 10.146.90.85 () {44 vars in 779 bytes} [Thu Nov  3 10:13:24 2016] GET /checkbit/ => generated 3905 bytes in 4 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 17985|app: 0|req: 5/19] 10.146.90.85 () {44 vars in 764 bytes} [Thu Nov  3 10:13:25 2016] GET / => generated 4901 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 17986|app: 0|req: 5/20] 10.146.90.85 () {44 vars in 773 bytes} [Thu Nov  3 10:13:25 2016] GET /checkbit/ => generated 3905 bytes in 4 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 17988|app: 0|req: 6/21] 10.146.90.85 () {44 vars in 764 bytes} [Thu Nov  3 10:13:26 2016] GET / => generated 4901 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 17985|app: 0|req: 6/22] 10.146.90.85 () {44 vars in 773 bytes} [Thu Nov  3 10:13:29 2016] GET /checkbit/ => generated 3905 bytes in 3 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 17985|app: 0|req: 7/23] 10.146.90.85 () {44 vars in 764 bytes} [Thu Nov  3 10:13:30 2016] GET / => generated 4901 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 17986|app: 0|req: 6/24] 10.146.90.85 () {44 vars in 773 bytes} [Thu Nov  3 10:13:30 2016] GET /checkbit/ => generated 3905 bytes in 4 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 17987|app: 0|req: 6/25] 10.146.90.85 () {44 vars in 764 bytes} [Thu Nov  3 10:13:31 2016] GET / => generated 4901 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+...gracefully killing workers...
+Gracefully killing worker 2 (pid: 17986)...
+Gracefully killing worker 3 (pid: 17987)...
+Gracefully killing worker 4 (pid: 17988)...
+Gracefully killing worker 1 (pid: 17985)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /wis/django/mysite
+closing all non-uwsgi socket fds > 2 (max_fd = 65536)...
+found fd 3 mapped to socket 0 (:8000)
+running /usr/local/python27/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.13.1 (64bit) on [Thu Nov  3 12:40:19 2016] ***
+compiled with version: 4.4.7 20120313 (Red Hat 4.4.7-17) on 27 July 2016 04:49:01
+os: Linux-2.6.32-358.el6.x86_64 #1 SMP Tue Jan 29 11:47:41 EST 2013
+nodename: EMMGTEST2
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 24
+current working directory: /wis/django/mysite
+detected binary path: /usr/local/python27/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /wis/django/mysite
+your processes number limit is 16384
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address :8000 fd 3
+Python version: 2.7.12 (default, Jul 27 2016, 04:39:51)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-17)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xfa6bc0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 363840 bytes (355 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xfa6bc0 pid: 17982 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 17982)
+spawned uWSGI worker 1 (pid: 18108, cores: 1)
+spawned uWSGI worker 2 (pid: 18109, cores: 1)
+spawned uWSGI worker 3 (pid: 18110, cores: 1)
+spawned uWSGI worker 4 (pid: 18111, cores: 1)

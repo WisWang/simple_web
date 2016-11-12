@@ -1,0 +1,29 @@
+{% extends 'home.html' %}
+{% block style %}
+    table{
+        margin-left:290px;
+    }
+    td{
+        height:20px;
+    }
+{% endblock %}
+{% block submit %}
+    <form name="t20form" class="myform" action="/checkbit/" method="post">{% csrf_token %}
+{% endblock %}
+{% block content %}
+    {% if result %}
+        {% for inst in result %}
+        <table >
+{#        <table class="table table-hover">#}
+
+{#                            所有的列表循环，列表里面的元素都在p标签里面#}
+                        <tr>
+
+                                <td>{{ inst}}</td>
+
+                        </tr>
+        </table>
+        {% endfor %}
+    {% endif %}
+
+{% endblock %}

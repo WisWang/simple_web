@@ -1,6 +1,6 @@
 #coding:utf-8
 from django.shortcuts import render,HttpResponse
-from t20 import t1
+from t20 import t1,func_checkbit
 import json,subprocess
 # Create your views here.
 int_char_dic={
@@ -103,3 +103,15 @@ def handle(request):
         return HttpResponse(json.dumps(feedback_dict))
     else:
         return render(request,"handle_t20.html")
+def checkbit(request):
+    if request.method == "POST":
+        checkbit_cardlist=[]
+        cardlist = request.POST["t20"]
+        cardlist=cardlist.split()
+        for i in cardlist:
+            check_b=func_checkbit.checkbit(i)
+            checkbit_cardlist.append('{:0>12}'.format(i+str(check_b)))
+        return render(request, "checkbit.html", {"result": checkbit_cardlist,})
+    else:
+        return render(request,"checkbit.html")
+

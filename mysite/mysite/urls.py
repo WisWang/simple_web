@@ -21,5 +21,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^analy/$', views.analy),
     url(r'^week/$', views.week),
+    url(r'^checkbit/$', views.checkbit),
     url(r'^$', views.handle),
 ]

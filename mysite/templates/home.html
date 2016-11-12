@@ -7,6 +7,8 @@
     <link href="/static/css/bootstrap.css" rel="stylesheet">
     <link href="/static/css/custom.css" rel="stylesheet">
     <style>
+        {% block style %}
+        {% endblock %}
         .text{
             height:300px;
         }
@@ -34,14 +36,29 @@
         .t20 p{
             margin:0 0 1px;
         }
+        #navi-div {
+            margin-left: 50px;
+            margin-right: 50px;
+        }
     </style>
 </head>
 <body>
-    <div style="height: 50px;">
+    <div style="height: 30px">
+
+    </div>
+    <div id="navi-div" >
+        <ul class="nav nav-pills nav-justified" id="navi">
+              <li role="presentation" ><a href="/">发送签名T20</a></li>
+              <li role="presentation" ><a href="/checkbit/">卡号加校验位</a></li>
+              <li role="presentation"><a href="/analy/">分析T20</a></li>
+{#              <li role="presentation"><a href="#">Messages</a></li>#}
+        </ul>
     </div>
     <div >
             <div style="margin-left:200px;">
+            {% block submit %}
                 <form name="t20form" class="myform" action="/" method="post">{% csrf_token %}
+            {% endblock %}
                     <textarea class="text form-control" style="height:150px;" name="t20"></textarea>
                     <br/>
                     {% if error %}
@@ -52,35 +69,62 @@
             </div>
     {% block content %}
         {% if result %}
-            <div name="all_t20">
-                {% for inst in result %}
-                    <div name="single_t20" class="t20" >
-{#                        {% autoescape off %}#}
-{#                        {%  response_head inst  %}#}
-{#                        {% endautoescape %}#}
+            {% for inst in result %}
+{#            <table class="table table-hover">#}
+            <table class="table table-hover">
                         {% for item in inst %}
-    {#                        所有的列表循环，列表里面的元素都在p标签里面#}
-                            <p>
+{#                            所有的列表循环，列表里面的元素都在p标签里面#}
+                            <tr>
                                 {% for it in item %}
-                                    <span>{{ it }}</span>
+                                    <td>{{ it }}</td>
                                 {% endfor %}
-                            </p>
+                            </tr>
                         {% endfor %}
-                    </div>
-                {% endfor %}
-            </div>
+            </table>
+            {% endfor %}
         {% endif %}
+
     {% endblock %}
     </div>
     <script src="/static/js/jquery-2.2.2.js"></script>
     <script src="/static/js/bootstrap.js"></script>
     <script >
+        $(document).ready(function(){
+            $("#navi-div a[href='{{ request.path }}']").parent().addClass("active")
+        })
 {#        $(document).ready(function(){#}
 {#            $("table").children().children(":first-child").click(function () {#}
 {#                $(this).siblings().toggleClass("hide")#}
 {#            });//end click#}
 {#        });//end ready#}
-
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie != '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = jQuery.trim(cookies[i]);
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        var csrftoken = getCookie('csrftoken');
+        function csrfSafeMethod(method) {
+            // these HTTP methods do not require CSRF protection
+            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+        }
+        $.ajaxSetup({
+            beforeSend: function(xhr, settings) {
+                if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                }
+            }
+        });
+        //end csrf ref
         $(document).ready(function(){
 
             $("body").delegate("textarea", "keydown",function(e){
