@@ -51,6 +51,11 @@
         </ul>
     </div>
     <div >
+            <div style="float:left;left:20px;margin-left: 40px;margin-top: 50px">
+                T20 服务端IP（默认是10.146.90.93）:
+
+                <input  type="text" id="ip" class="form-control" placeholder="10.146.90.93"\>
+            </div>
             <div style="margin-left:200px;">
 
                 <form name="t20form" class="myform" action="/" method="post">
@@ -142,10 +147,17 @@
             var msg_text = $("textarea").val();
 {#            var action=$(arg).attr("name");#}
             console.log(msg_text);
+            if($("#ip").val()) {
+                var ipaddr = $("#ip").val();
+            }
+            else{
+                var ipaddr=$("#ip").attr("placeholder");
+            }
+
             $.ajax({
                 url: "/",
                 method: "POST",
-                data: {msg: msg_text, act: $(arg).attr("name")},
+                data: {msg: msg_text, act: $(arg).attr("name"), ip:ipaddr,place:$("#ip").attr("placeholder")},
                 success: function(arg1){
                     var callback_dict = $.parseJSON(arg1);
                     var back=callback_dict["back"];

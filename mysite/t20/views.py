@@ -85,15 +85,18 @@ def analy(request):
 
 def handle(request):
     if request.method=="POST":
-        # print request.POST
+        print request.POST
         cmd_list=["./send_t20.sh"]
+        ipaddr=request.POST["ip"]
+        print ipaddr
+        cmd_list.append(ipaddr)
         oragin_t20=request.POST["msg"]
         cmd_list.append(oragin_t20)
         if request.POST["act"]=="send_t20":
             cmd_list.append("1")
         feedback_dict={}
         obj = subprocess.Popen(cmd_list, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
-                               cwd="/wis/t20")
+                               cwd="/wis/webt20")
         buff = obj.stdout.readlines()
         # feedback_dict["back"]=data["action"]+"success"
         feedback_dict["back"]=buff[0].strip()
